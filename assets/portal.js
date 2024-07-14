@@ -1,27 +1,22 @@
 
     var add = document.getElementById('Add');
+    let RollNo = 1110;
     var nameInput = document.getElementById('name');
     var email = document.getElementById('email');
-    var rollNo = document.getElementById('RollNo')
+    // var rollNo = document.getElementById('RollNo')
     var tabledata = document.getElementById('tabledata');
-    var SNo = localStorage.getItem('SNo') ? parseInt(localStorage.getItem('SNo')) : 0;
-
-
+    var SNo = localStorage.getItem('SNo') ? parseInt(localStorage.getItem('SNo')) : 0;    
 writing()
-
-
-
-
 
     add.addEventListener('click' , (e)=>{
         if (nameInput.value != '' && email.value != '') {
             SNo++
         e.preventDefault();
-            localStorage.setItem(`Student-${SNo}` , JSON.stringify([nameInput.value , email.value , rollNo.value]))
+            localStorage.setItem(`Student-${SNo}` , JSON.stringify([nameInput.value , email.value ]))
                localStorage.setItem('SNo', SNo);
             nameInput.value = ''
             email.value = ''
-            rollNo.value = ''
+            // rollNo.value = ''
             writing()
             window.location.reload()
         }
@@ -39,11 +34,13 @@ function writing() {
             const table = document.getElementsByTagName('tr');
 
             tr.innerHTML += ` 
-                    <td id='serialNo'></td>
-                    <td>${data[0]}<i class="fa-solid fa-trash-can" id='deleteIcon'></i></td>
-                    <td>${data[1]}</td>
-                    <td>${data[2]}</td>
+                    <td id='serialNo' align='center'></td>
+                    <td align='center'>${data[0]}</td>
+                    <td align='center'>${data[1]}</td>
+                    <td align='center' disabled>${RollNo++}</td>
+                    <td align='center'><i class="fa-solid fa-trash-can" id='deleteIcon'></i></td>
                 `
+                adding()
                   window.location.reload
                   var serialNo = document.querySelectorAll('#serialNo')
                   var deleteIcon = document.querySelectorAll('#deleteIcon')
@@ -57,9 +54,15 @@ function writing() {
         }
     }
 }
+function adding(){
 
+    var tr = document.getElementsByTagName('tr')
+    for (let i = 0; i < tr.length; i++) {
+        var Serialtr = tr[i].querySelector('#serialNo')
+        if (Serialtr) {
+            Serialtr.innerHTML = i;
+        }
 
-
-
-
-// alert('Your table has ' + iRowCount + ' rows.');
+        
+    }
+}
