@@ -1,19 +1,30 @@
+@font-face {
+    font-family: 'Pop';
+    src: url(../Fonts/Poppins/Poppins-Light.ttf);
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Pop';
 }
 body,html{
-    background-color: #a2d5c6;
+    background-color: #a2d5c6 !important;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
 }
+
 details{
     color: #5c3c92;
+    margin-top: 20px;
+    margin-bottom: 30px !important;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#name{
+    margin-top: 30px;
 }
 #formDiv{
     display: flex;
@@ -23,11 +34,57 @@ details{
 }
 #stTr{
     background-color: cornflowerblue;
-    border-bottom: 1px solid black;
-    padding: -20px !important;
+    margin-bottom: 30px !important;
     color: rgba(255, 255, 255, 0.825);
 }
 tr{
     background-color: #5c3c92;
     color: white !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+td{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+.buttonDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    background-color: transparent;
+    border: 1px solid #5c3c92;
+    width: 240px;
+    height: 40px;
+    padding-left: 20px;
+    outline: white;
+    color: #5c3c92;
+}
+input::placeholder{
+        color: #5c3c92;
+}
+button{
+    background-color: #5c3c92;
+    border: none;
+    color: #a2d5c6;
+    width: 100px;
+    height: 40px;
+}
+button:hover{
+    background-color: #a2d5c6;
+    color: #5c3c92;
+}
+@media screen and (min-width: 0px) and (max-width: 750px) {
+    #d{
+        font-size: 10px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    #stTr{
+        font-size: 10px !important;
+    }
+    #serialNo{
+        font-size: 10px !important;
+    }
 }

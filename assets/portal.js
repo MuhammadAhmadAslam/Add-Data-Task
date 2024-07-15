@@ -30,15 +30,16 @@ function writing() {
         if (localStorage.getItem(key)) {
            var data = JSON.parse(localStorage.getItem(key))
            var tr = document.createElement('tr')
+           tr.classList.add('trcustomized')
             tabledata.appendChild(tr)
             const table = document.getElementsByTagName('tr');
 
             tr.innerHTML += ` 
                     <td id='serialNo' align='center'></td>
-                    <td align='center'>${data[0]}</td>
-                    <td align='center'>${data[1]}</td>
-                    <td align='center' disabled>${RollNo++}</td>
-                    <td align='center'><i class="fa-solid fa-trash-can" id='deleteIcon'></i></td>
+                    <td style='margin-top:30px; font-size: 14px;' id='d'>${data[0]}</td>
+                    <td style='margin-top:30px; font-size: 14px;' id='d'>${data[1]}</td>
+                    <td style='margin-top:30px; font-size: 14px; padding-left: 30px;' id='d' disabled>${RollNo++}</td>
+                    <td style='margin-top:30px; font-size: 14px;' id='d' align='center'><i class="fa-solid fa-trash-can" id='deleteIcon'></i></td>
                 `
                 adding()
                   window.location.reload
